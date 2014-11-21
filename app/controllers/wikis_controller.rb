@@ -13,7 +13,7 @@ class WikisController < ApplicationController
 
 
   def create
-     @wiki = Wiki.new(params.require(:wiki).permit(:title, :body))
+     @wiki = current_user.wikis.build(params.require(:wiki).permit(:title, :body))
      if @wiki.save
        flash[:notice] = "Wiki was saved."
        redirect_to @wiki
@@ -29,9 +29,9 @@ class WikisController < ApplicationController
 
   def update
      @wiki = Wiki.find(params[:id])
-     if @wiki.update_attributes(params.require(:post).permit(:title, :body))
+     if @wiki.update_attributes(params.require(:wiki).permit(:title, :body))
        flash[:notice] = "Wiki was updated."
-       redirect_to @post
+       redirect_to @wiki
      else
        flash[:error] = "There was an error saving the wiki. Please try again."
        render :edit
