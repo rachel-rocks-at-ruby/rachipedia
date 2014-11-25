@@ -2,8 +2,17 @@
 <div class="jumbotron">
   <h1>Rachipedia</h1>
   <p>The alternative to Wikipedia that makes you lose weight and feel great!</p>
-  <p>
-      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or 
-      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+  </br>
+  </br>
+      <div class="row">
+        <div class="col-md-4">
+          <%= link_to "Free Plan", new_user_registration_path, class: 'btn btn-primary' %> 
+          <p>Create as many public wikis as you want.</p>
+        </div>
+        <div class="col-md-4">
+          <%= link_to "Premium Plan", new_charge_path, class: 'btn btn-primary' %>
+          <p>Create private wikis and invite collaborators.</p>
+        </div>
+      </div>
   </p>
 </div>

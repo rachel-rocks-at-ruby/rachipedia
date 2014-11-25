@@ -1,10 +1,7 @@
 <h1><%= markdown @wiki.title %></h1>
 <p><%= markdown @wiki.body %></p>
+<small>
+   created by <%= @wiki.user.try(:name) %><br/>
+</small>
 </br>
 <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
-
-<!-- <small>
-   created by <%#= wiki.user.name %><br/>
-</small> -->
-
-<!-- how to sort wikis alphabetically? -->
