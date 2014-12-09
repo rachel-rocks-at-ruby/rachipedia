@@ -22,5 +22,35 @@ users = User.all
 end
 wikis = Wiki.all
 
+ # Create an admin user
+ admin = User.new(
+   name:     'Admin User',
+   email:    'admin@example.com',
+   password: 'helloworld',
+   role:     'admin'
+ )
+ admin.skip_confirmation!
+ admin.save!
+ 
+ # Create a premium user
+ moderator = User.new(
+   name:     'Premium User',
+   email:    'premium@example.com', 
+   password: 'helloworld',
+   role:     'premium'
+ )
+ moderator.skip_confirmation!
+ moderator.save!
+ 
+ # Create a standard user
+ member = User.new(
+   name:     'Standard User',
+   email:    'member@example.com',
+   password: 'helloworld',
+   role:     'standard'
+ )
+ member.skip_confirmation!
+ member.save!
+
 puts "Seed finished"
 puts "#{Wiki.count} posts created"

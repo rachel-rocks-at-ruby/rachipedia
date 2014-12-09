@@ -1,12 +1,33 @@
-<%= form_tag charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Amount: $25.00</span>
-    </label>
-  </article>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rachipedia</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+</head>
+<body>
+</br>
+  <p>
+  You must already have a free acount to upgrade to premium. </br>
+  <%= link_to "Get free account", new_user_registration_path, class: 'btn btn-success' %>
+  </p>
+  </br>
+  <p>
+  <h4>If you're all set, upgrade here!</h4>
+  </p>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A year's subscription"
-          data-amount="2500"></script>
-<% end %>
+  <%= form_tag charges_path do %>
+    <article>
+      <label class="amount">
+        <span>Amount: $15.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A year's subscription"
+            data-amount="1500"></script>
+  <% end %>
+  </br>
+  </br>
+  <%= link_to "Home", root_path, class: 'btn btn-success' %>
+</body>

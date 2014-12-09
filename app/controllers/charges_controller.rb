@@ -5,7 +5,8 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 2500
+    @amount = 1500
+    @user = current_user
 
     customer = Stripe::Customer.create(
       :email => 'example@stripe.com',
@@ -18,6 +19,12 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+
+    @user.role = "premium"
+    @user.save
+
+    flash[:notice] = "Your account has been upgraded to premium."
+    redirect_to wikis_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
