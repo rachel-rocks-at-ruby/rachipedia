@@ -1,0 +1,19 @@
+<strong>Add Collaborators</strong>
+<table>
+    <tr> 
+    <th>Name</th>
+    <th>Give Access</th>
+    </tr>
+
+    <tr> 
+    <%= form_for (@collaboration) do |f| %>
+        <td> <%= f.collection_select :user_id, User.all, :id, :name, prompt: true %> </td>
+    </tr>
+
+    <tr> 
+        <td> <%= f.collection_select :wiki_id, Wiki.all, :id, :title, prompt: true %> </td>
+    </tr>
+    </table>
+
+   <%= f.submit %>
+<% end %>

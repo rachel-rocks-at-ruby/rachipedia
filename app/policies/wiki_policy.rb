@@ -17,7 +17,6 @@ class WikiPolicy < ApplicationPolicy
               wikis << wiki # only show standard users public wikis and private wikis they are a collaborator on
             end
           end
-          binding.pry
          elsif user.admin?
            wikis = scope.all # if the user is an admin, show them all the wikis
 

@@ -38,10 +38,6 @@ class ApplicationPolicy
     record.class
   end
 
-  def admin?
-    user.admin? || user.premium?
-  end
-
 
   class Scope
     attr_reader :user, :scope

@@ -1,7 +1,6 @@
 class WikisController < ApplicationController
   def index
-    @wikis = policy_scope(Wiki)
-    #.order(:title)
+    @wikis = policy_scope(Wiki).order(:title)
   end
 
   def show
