@@ -7,7 +7,7 @@ class Wiki < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :history, :finders]
 
   validates :title, length: { minimum: 5 }, presence: true
-  validates :body, length: { minimum: 20 }, presence: true
+  validates :body, length: { minimum: 5 }, presence: true
 
   #need help with the syntax
   # scope :visible_to, -> { (user.admin? || user.premium?) ? all : where(private: false)}
