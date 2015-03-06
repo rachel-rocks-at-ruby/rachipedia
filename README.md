@@ -7,12 +7,12 @@ https://rachipedia.herokuapp.com/
 application.example.yml
 
 Gems
-bootstrap-sass 3.1.1
-devise
-figaro 1.0
-faker
-redcarpet
-stripe
-friendly_id
-pundit
-pry
+* bootstrap-sass 3.1.1
+* devise
+* figaro 1.0
+* faker
+* redcarpet
+* stripe
+* friendly_id
+* pundit
+* pry
